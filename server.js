@@ -1,5 +1,7 @@
 app = require('./express_middleware.js').app;
 
+const port = process.env.PORT || 3000;
+
 app.get('/', (request, response) => {
   // response.send('<h1>Hello from Express!</h1>');
   // response.send({
@@ -27,6 +29,6 @@ app.get('/bad', (request, response) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+app.listen(port, () => {
+  console.log(`Server is up on port ${port}`);
 });
